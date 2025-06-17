@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak - Sate dan Soto Madura Mas Acong</title>
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .nav-link {
+            padding: 8px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+        }
+
+        .nav-link.active {
+            background: #dc2626;
+            color: white;
+        }
+
+        .mobile-menu-overlay {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-slide {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-slide.active {
+            transform: translateX(0);
+        }
+
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+        }
+
+        .form-input {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+            background: white;
+        }
+
+        .form-input:focus {
+            border-color: #dc2626;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+            outline: none;
+        }
+
+        .btn-submit {
+            background: #8B0000;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background: #B22222;
+        }
+
+        .btn-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .focus\:ring-custom:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .navbar-scrolled {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 767px) {
+            .navbar-main {
+                background-color: white !important;
+            }
+
+            .navbar-scrolled {
+                background-color: white !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="inter bg-gray-50">
+    <header class="bg-white text-gray-800 fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="bg-red-800 text-white py-2">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="hidden md:flex justify-between items-center text-sm">
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center space-x-2 hover:text-red-200 transition-colors cursor-pointer">
+                            <i class="fas fa-phone text-red-300"></i>
+                            <span>0822 9961 7744</span>
+                        </div>
+                        <div class="flex items-center space-x-2 hover:text-red-200 transition-colors cursor-pointer">
+                            <i class="fas fa-envelope text-red-300"></i>
+                            <span>nengjuliawati06@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="w-7 h-7 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-twitter text-xs"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/16oEzD4RGF/?mibextid=wwXIfr"
+                            class="w-7 h-7 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-facebook text-xs"></i>
+                        </a>
+                        <a href="https://www.instagram.com/warungsatemadura._"
+                            class="w-7 h-7 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-instagram text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex flex-col space-y-2 text-xs">
+                    <div class="flex flex-col space-y-1">
+                        <div
+                            class="flex items-center justify-center space-x-2 hover:text-red-200 transition-colors cursor-pointer">
+                            <i class="fas fa-phone text-red-300 w-3"></i>
+                            <span class="text-xs">0822 9961 7744</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-center space-x-2 hover:text-red-200 transition-colors cursor-pointer">
+                            <i class="fas fa-envelope text-red-300 w-3"></i>
+                            <span class="text-xs">nengjuliawati06@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center space-x-4">
+                        <a href="#"
+                            class="w-8 h-8 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-twitter text-xs"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/16oEzD4RGF/?mibextid=wwXIfr"
+                            class="w-8 h-8 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-facebook text-xs"></i>
+                        </a>
+                        <a href="https://www.instagram.com/warungsatemadura._"
+                            class="w-8 h-8 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-instagram text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="py-3 bg-white navbar-main transition-all duration-300">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex items-center justify-center">
+                        <img src="/images/logo.png" alt="Logo Sate dan Soto Madura Mas Acong"
+                            class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div>
+                        <h1 class="playfair text-sm sm:text-lg font-bold text-gray-800 italic leading-tight">
+                            <span class="block sm:inline">Sate dan Soto Madura</span>
+                            <span class="block sm:inline">Mas Acong</span>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex space-x-2">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="tentang.html" class="nav-link">Tentang</a>
+                    <a href="menu.html" class="nav-link">Menu</a>
+                    <a href="kontak.html" class="nav-link active">Kontak</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 p-2 touch-target">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu-overlay"
+            class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 mobile-menu-overlay"></div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden fixed top-0 left-0 w-80 h-full bg-white shadow-lg z-50 mobile-menu-slide">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="playfair text-xl font-bold text-gray-800">Menu</h2>
+                    <button id="mobile-menu-close" class="text-gray-500 hover:text-gray-700 p-2 touch-target">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <nav class="space-y-4">
+                    <a href="index.html"
+                        class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors font-medium">Beranda</a>
+                    <a href="tentang.html"
+                        class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors font-medium">Tentang</a>
+                    <a href="menu.html"
+                        class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors font-medium">Menu</a>
+                    <a href="kontak.html"
+                        class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors font-medium">Kontak</a>
+                </nav>
+
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <h3 class="font-semibold text-gray-800 mb-4">Kontak Kami</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-red-600 w-4"></i>
+                            <span>0822 9961 7744</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-red-600 w-4"></i>
+                            <span class="text-xs">nengjuliawati06@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 sm:pt-32">
+        <section class="py-12 sm:py-16 bg-white">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="text-center mb-12">
+                    <h1
+                        class="playfair text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 leading-tight mt-10">
+                        Kontak Kami
+                    </h1>
+                    <p class="text-gray-600 text-lg lg:text-xl leading-relaxed max-w-2xl mx-auto">
+                        Kami siap menerima pertanyaan, saran, atau pemesanan Anda!<br>
+                        Hubungi kami melalui form di bawah atau melalui informasi<br>
+                        kontak berikut.
+                    </p>
+                </div>
+
+                <div class="max-w-2xl mx-auto">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nama" class="block text-sm font-medium text-gray-700 mb-2">Nama</label>
+                                <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required
+                                    class="form-input w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                                <input type="email" id="email" name="email" placeholder="Masukkan email Anda" required
+                                    class="form-input w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="subjek" class="block text-sm font-medium text-gray-700 mb-2">Subjek</label>
+                            <input type="text" id="subjek" name="subjek" placeholder="Tulis subjek"
+                                class="form-input w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500">
+                        </div>
+
+                        <div>
+                            <label for="pesan" class="block text-sm font-medium text-gray-700 mb-2">Pesan</label>
+                            <textarea id="pesan" name="pesan" rows="6" placeholder="Tulis Pesan Di sini"
+                                class="form-input w-full px-4 py-3 rounded-lg text-gray-900 placeholder-gray-500 resize-none"></textarea>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit"
+                                class="btn-submit text-white font-semibold py-4 px-16 rounded-full text-lg w-full sm:w-auto touch-target">
+                                <span class="btn-text">Kirim</span>
+                                <i class="fas fa-spinner fa-spin hidden ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 sm:py-16 bg-gray-50">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-6xl mx-auto">
+                    <div class="text-center">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Hubungi Kami:</h3>
+                        <a href="tel:082299617744"
+                            class="text-red-600 text-xl font-bold hover:text-red-700 transition-colors">
+                            0822-9961-7744
+                        </a>
+                    </div>
+
+                    <div class="text-center">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Jam Operasional:</h3>
+                        <div class="text-gray-600">
+                            <p>Senin - Minggu</p>
+                            <p class="font-semibold">10.00 - 22.00 WIB</p>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-4">Lokasi Kami:</h3>
+                        <div class="text-gray-600 text-sm space-y-4">
+                            <div>
+                                <p class="font-semibold">Lokasi 1:</p>
+                                <p>Jl. RAA. Wiratanudiningrat No.9b, RW.01, Empangsari, Kec. Tawang, Kab. Tasikmalaya,
+                                    Jawa Barat 46112</p>
+                            </div>
+                            <div>
+                                <p class="font-semibold">Lokasi 2:</p>
+                                <p>Jl. wiratanudiningrat No.26-28, RT.10 RW.1, Tawangsari, Kec. Tawang, Kab.
+                                    Tasikmalaya, Jawa Barat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gradient-to-br from-red-900 to-red-800 text-white py-12 sm:py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
+                <div class="lg:col-span-2 space-y-4 sm:space-y-6">
+                    <div class="flex items-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+                        <div
+                            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center">
+                            <img src="/images/logo.png" alt="Logo Sate dan Soto Madura Mas Acong"
+                                class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div>
+                            <h3 class="playfair text-lg sm:text-2xl font-bold italic text-white leading-tight">
+                                <span class="block sm:inline">Sate dan Soto Madura</span><br class="sm:hidden">
+                                <span class="block sm:inline">Mas Acong</span>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <p class="text-white text-sm sm:text-base leading-relaxed max-w-md">
+                        Kami menghadirkan cita rasa sate, soto, gulai, dan hidangan lezat lainnya dengan kualitas
+                        terbaik, siap menemani setiap momen Anda.
+                    </p>
+
+                    <div class="space-y-2">
+                        <p class="text-white font-semibold text-sm sm:text-base">Jam Buka: 10.00 - 22.00</p>
+                    </div>
+
+                    <div class="flex space-x-3 sm:space-x-4">
+                        <a href="#" aria-label="Twitter"
+                            class="w-10 h-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-twitter text-white text-sm"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/16oEzD4RGF/?mibextid=wwXIfr" aria-label="Facebook"
+                            class="w-10 h-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-facebook text-white text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/warungsatemadura._" aria-label="Instagram"
+                            class="w-10 h-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-instagram text-white text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-4 sm:space-y-6">
+                    <h4 class="text-lg sm:text-xl font-bold text-white">Halaman</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="index.html"
+                                class="text-white hover:text-yellow-200 transition-colors duration-300 text-sm sm:text-base touch-target block">Beranda</a>
+                        </li>
+                        <li><a href="tentang.html"
+                                class="text-white hover:text-yellow-200 transition-colors duration-300 text-sm sm:text-base touch-target block">Tentang</a>
+                        </li>
+                        <li><a href="menu.html"
+                                class="text-white hover:text-yellow-200 transition-colors duration-300 text-sm sm:text-base touch-target block">Menu</a>
+                        </li>
+                        <li><a href="kontak.html"
+                                class="text-white hover:text-yellow-200 transition-colors duration-300 text-sm sm:text-base touch-target block">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4 sm:space-y-6 md:col-span-2 lg:col-span-1">
+                    <h4 class="text-lg sm:text-xl font-bold text-white">Ikuti Kami di Instagram</h4>
+                    <div class="grid grid-cols-2 gap-2 sm:gap-3">
+                        <div
+                            class="aspect-square rounded-lg sm:rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                            <img src="/images/sate-3.jpg"
+                                alt="Instagram Post 1" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square rounded-lg sm:rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                            <img src="/images/sate2.jpg"
+                                alt="Instagram Post 2" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square rounded-lg sm:rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                            <img src="/images/1000012958.png"
+                                alt="Instagram Post 3" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square rounded-lg sm:rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                            <img src="/images/sate-maranggi.jpg"
+                                alt="Instagram Post 4" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-red-700 pt-6 sm:pt-8">
+                <div class="text-center">
+                    <p class="text-white text-xs sm:text-sm">
+                        Copyright © 2025 Jupiter. All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+        <a href="https://wa.me/6282299617744" target="_blank" aria-label="Chat via WhatsApp"
+            class="bg-green-500 hover:bg-green-600 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 touch-target flex items-center justify-center focus:ring-custom">
+            <i class="fab fa-whatsapp text-lg sm:text-xl"></i>
+        </a>
+    </div>
+
+    <div id="success-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full mx-4 text-center">
+            <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-check text-green-600 text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Pesan Terkirim!</h3>
+            <p class="text-gray-600 mb-6">Terima kasih telah menghubungi kami. Kami akan membalas pesan Anda segera.</p>
+            <button id="close-modal"
+                class="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-full font-semibold transition-colors">
+                Tutup
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuOverlay.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            const navbarMain = document.querySelector('.navbar-main');
+
+            if (window.scrollY > 100) {
+                if (window.innerWidth >= 768) {
+                    navbarMain.classList.add('navbar-scrolled');
+                }
+            } else {
+                navbarMain.classList.remove('navbar-scrolled');
+            }
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 768) {
+                closeMobileMenu();
+                const navbarMain = document.querySelector('.navbar-main');
+                navbarMain.classList.remove('navbar-scrolled');
+            }
+        });
+
+        const form = document.getElementById('contact-form');
+        const submitBtn = form.querySelector('.btn-submit');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const spinner = submitBtn.querySelector('.fa-spinner');
+        const successModal = document.getElementById('success-modal');
+        const closeModal = document.getElementById('close-modal');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+            const nama = formData.get('nama').trim();
+            const email = formData.get('email').trim();
+            const subjek = formData.get('subjek').trim();
+            const pesan = formData.get('pesan').trim();
+
+            if (!nama || !email || !pesan) {
+                alert('Mohon lengkapi field Nama, Email, dan Pesan');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Format email tidak valid');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.classList.add('loading');
+            btnText.textContent = 'Mengirim...';
+            spinner.classList.remove('hidden');
+
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('loading');
+                btnText.textContent = 'Kirim';
+                spinner.classList.add('hidden');
+                successModal.classList.remove('hidden');
+                this.reset();
+            }, 2000);
+        });
+
+        closeModal.addEventListener('click', function () {
+            successModal.classList.add('hidden');
+        });
+
+        successModal.addEventListener('click', function (e) {
+            if (e.target === successModal) {
+                successModal.classList.add('hidden');
+            }
+        });
+
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        const touchTargets = document.querySelectorAll('.touch-target');
+        touchTargets.forEach(target => {
+            target.addEventListener('touchstart', function () {
+                this.style.transform = 'scale(0.95)';
+            }, { passive: true });
+
+            target.addEventListener('touchend', function () {
+                this.style.transform = '';
+            }, { passive: true });
+
+            target.addEventListener('touchcancel', function () {
+                this.style.transform = '';
+            }, { passive: true });
+        });
+
+        const textarea = document.getElementById('pesan');
+        textarea.addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = this.scrollHeight + 'px';
+        });
+    </script>
+</body>
+
+</html>

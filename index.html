@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sate dan Soto Madura Mas Acong</title>
+    <link rel="icon" href="/images/logo.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap');
+
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .inter {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+                url('/images/sate2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #b91c1c, #991b1b);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(220, 38, 38, 0.3);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #dc2626;
+            transform: translateY(-2px);
+        }
+
+        .nav-link {
+            padding: 8px 20px;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background: rgba(220, 38, 38, 0.1);
+            color: #dc2626;
+        }
+
+        .nav-link.active {
+            background: #dc2626;
+            color: white;
+        }
+
+        .mobile-menu-overlay {
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-slide {
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu-slide.active {
+            transform: translateX(0);
+        }
+
+        .responsive-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .navbar-scrolled {
+            background-color: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 767px) {
+            .navbar-main {
+                background-color: white !important;
+            }
+
+            .navbar-scrolled {
+                background-color: white !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .mobile-padding {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            .mobile-text-center {
+                text-align: center;
+            }
+
+            .mobile-space-y-4>*+* {
+                margin-top: 1rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .touch-target {
+            min-height: 44px;
+            min-width: 44px;
+        }
+    </style>
+</head>
+
+<body class="inter">
+    <header class="bg-white text-gray-800 fixed top-0 left-0 right-0 z-50 shadow-md">
+        <div class="bg-red-800 text-white py-2">
+            <div class="container mx-auto px-4 sm:px-6">
+                <div class="hidden md:flex justify-between items-center text-sm">
+                    <div class="flex items-center space-x-6">
+                        <div class="flex items-center space-x-2 hover:text-red-200 transition-colors cursor-pointer">
+                            <i class="fas fa-phone text-red-300"></i>
+                            <span>0822 9961 7744</span>
+                        </div>
+                        <div class="flex items-center space-x-2 hover:text-red-200 transition-colors cursor-pointer">
+                            <i class="fas fa-envelope text-red-300"></i>
+                            <span>nengjuliawati06@gmail.com</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="#"
+                            class="w-7 h-7 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-twitter text-xs"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/16oEzD4RGF/?mibextid=wwXIfr"
+                            class="w-7 h-7 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-facebook text-xs"></i>
+                        </a>
+                        <a href="https://www.instagram.com/warungsatemadura._"
+                            class="w-7 h-7 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-instagram text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex flex-col space-y-2 text-xs">
+                    <div class="flex flex-col space-y-1">
+                        <div
+                            class="flex items-center justify-center space-x-2 hover:text-red-200 transition-colors cursor-pointer">
+                            <i class="fas fa-phone text-red-300 w-3"></i>
+                            <span class="text-xs">0822 9961 7744</span>
+                        </div>
+                        <div
+                            class="flex items-center justify-center space-x-2 hover:text-red-200 transition-colors cursor-pointer">
+                            <i class="fas fa-envelope text-red-300 w-3"></i>
+                            <span class="text-xs">nengjuliawati06@gmail.com</span>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center space-x-4">
+                        <a href="#"
+                            class="w-8 h-8 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-twitter text-xs"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/16oEzD4RGF/?mibextid=wwXIfr"
+                            class="w-8 h-8 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-facebook text-xs"></i>
+                        </a>
+                        <a href="https://www.instagram.com/warungsatemadura._"
+                            class="w-8 h-8 bg-red-700 hover:bg-red-600 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-instagram text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="py-3 bg-white navbar-main transition-all duration-300">
+            <div class="container mx-auto px-4 flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div
+                        class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden flex items-center justify-center">
+                        <img src="/images/logo.png" alt="Logo Sate dan Soto Madura Mas Acong"
+                            class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <div>
+                        <h1 class="playfair text-sm sm:text-lg font-bold text-gray-800 italic leading-tight">
+                            <span class="block sm:inline">Sate dan Soto Madura</span>
+                            <span class="block sm:inline">Mas Acong</span>
+                        </h1>
+                    </div>
+                </div>
+
+                <div class="hidden md:flex space-x-2">
+                    <a href="index.html" class="nav-link active">Beranda</a>
+                    <a href="tentang.html" class="nav-link">Tentang</a>
+                    <a href="menu.html" class="nav-link">Menu</a>
+                    <a href="kontak.html" class="nav-link">Kontak</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700 p-2 touch-target">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu-overlay"
+            class="hidden md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 mobile-menu-overlay"></div>
+
+        <div id="mobile-menu"
+            class="hidden md:hidden fixed top-0 left-0 w-80 h-full bg-white shadow-lg z-50 mobile-menu-slide">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="playfair text-xl font-bold text-gray-800">Menu</h2>
+                    <button id="mobile-menu-close" class="text-gray-500 hover:text-gray-700 p-2 touch-target">
+                        <i class="fas fa-times text-xl"></i>
+                    </button>
+                </div>
+
+                <nav class="space-y-4">
+                    <a href="index.html"
+                        class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors font-medium">Beranda</a>
+                    <a href="tentang.html"
+                        class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors font-medium">Tentang</a>
+                    <a href="menu.html"
+                        class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors font-medium">Menu</a>
+                    <a href="kontak.html"
+                        class="block py-3 px-4 text-gray-700 hover:bg-red-50 hover:text-red-600 rounded-lg transition-colors font-medium">Kontak</a>
+                </nav>
+
+                <div class="mt-8 pt-8 border-t border-gray-200">
+                    <h3 class="font-semibold text-gray-800 mb-4">Kontak Kami</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone text-red-600 w-4"></i>
+                            <span>0822 9961 7744</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-red-600 w-4"></i>
+                            <span class="text-xs">nengjuliawati06@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="container mx-auto mobile-padding text-center text-white">
+            <div class="max-w-4xl mx-auto">
+                <h2
+                    class="playfair text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold mb-4 sm:mb-6 text-shadow leading-tight">
+                    Makanan Lezat<br>
+                    <span class="text-red-300">Untuk Anda</span>
+                </h2>
+
+                <p
+                    class="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 text-shadow max-w-2xl mx-auto font-light opacity-90 px-4">
+                    Temukan hidangan lezat dan pengalaman kuliner yang menyenangkan di tempat kami.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
+                    <a href="kontak.html">
+                        <button
+                            class="btn-primary text-white font-semibold py-3 px-8 rounded-full text-base hover-scale w-full sm:w-auto touch-target">
+                            Pesan Sekarang
+                        </button>
+                    </a>
+                    <a href="menu.html">
+                        <button
+                            class="btn-secondary text-white font-semibold py-3 px-8 rounded-full text-base hover-scale w-full sm:w-auto touch-target">
+                            Lihat Menu
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-10 hidden lg:block">
+            <div class="w-20 h-20 bg-white bg-opacity-10 rounded-full flex items-center justify-center">
+                <i class="fas fa-fire text-orange-400 text-xl"></i>
+            </div>
+        </div>
+
+        <div class="absolute top-1/4 right-10 hidden lg:block">
+            <div class="w-16 h-16 bg-yellow-400 bg-opacity-20 rounded-full flex items-center justify-center">
+                <i class="fas fa-pepper-hot text-red-400 text-lg"></i>
+            </div>
+        </div>
+
+        <div class="absolute bottom-1/3 right-1/4 hidden lg:block">
+            <div class="w-18 h-18 bg-red-500 bg-opacity-15 rounded-full flex items-center justify-center">
+                <i class="fas fa-drumstick-bite text-yellow-300 text-lg"></i>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 sm:py-16 bg-gray-50">
+        <div class="container mx-auto mobile-padding">
+            <div class="text-center mb-8 sm:mb-12">
+                <h2 class="playfair text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+                    Jelajahi Menu Kami
+                </h2>
+                <div class="w-20 h-1 bg-red-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12 sm:mb-16">
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-list text-red-600 text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">Semua</h3>
+                    <p class="text-gray-600 text-sm mb-4 sm:mb-6 leading-relaxed">
+                        Beragam pilihan menu sate dan hidangan lainnya.
+                    </p>
+                    <a href="menu.html">
+                        <button
+                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors touch-target w-full sm:w-auto">
+                            Jelajahi Menu
+                        </button>
+                    </a>
+                </div>
+
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-utensils text-red-600 text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">Makanan</h3>
+                    <p class="text-gray-600 text-sm mb-4 sm:mb-6 leading-relaxed">
+                        Sate, soto, dan gulai khas Madura yang menggugah selera.
+                    </p>
+                    <a href="menu.html">
+                        <button
+                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors touch-target w-full sm:w-auto">
+                            Jelajahi Menu
+                        </button>
+                    </a>
+                </div>
+
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-glass-martini text-red-600 text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">Minuman</h3>
+                    <p class="text-gray-600 text-sm mb-4 sm:mb-6 leading-relaxed">
+                        Minuman segar untuk menemani santapan Anda.
+                    </p>
+                    <a href="menu.html">
+                        <button
+                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors touch-target w-full sm:w-auto">
+                            Jelajahi Menu
+                        </button>
+                    </a>
+                </div>
+
+                <div
+                    class="bg-white rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 text-center">
+                    <div
+                        class="w-14 h-14 sm:w-16 sm:h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                        <i class="fas fa-star text-red-600 text-xl sm:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-800 mb-2 sm:mb-3">Lainnya</h3>
+                    <p class="text-gray-600 text-sm mb-4 sm:mb-6 leading-relaxed">
+                        Aneka pelengkap seperti kerupuk, lontong, dan nasi.
+                    </p>
+                    <a href="menu.html">
+                        <button
+                            class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded-full text-sm font-medium transition-colors touch-target w-full sm:w-auto">
+                            Jelajahi Menu
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 sm:py-16 bg-gray-50">
+        <div class="container mx-auto mobile-padding">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                <div class="relative order-2 lg:order-1">
+                    <div class="relative z-10">
+                        <img src="/images/sate-maranggi.jpg"
+                            alt="Hidangan Madura"
+                            class="w-full h-64 sm:h-80 lg:h-[500px] object-cover rounded-3xl shadow-2xl responsive-img">
+                    </div>
+
+                    <div
+                        class="absolute -bottom-4 -left-4 sm:-bottom-6 sm:-left-6 bg-gradient-to-br from-amber-900 to-red-900 text-white p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl shadow-2xl z-20 max-w-xs sm:max-w-sm backdrop-blur-sm">
+                        <h3 class="text-lg sm:text-xl lg:text-2xl font-bold mb-4 sm:mb-6 text-amber-200 playfair">Alamat
+                            dan Kontak</h3>
+
+                        <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm">
+                            <div class="flex items-center space-x-3 sm:space-x-4">
+                                <div
+                                    class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-200 bg-opacity-20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-phone text-amber-200 text-xs sm:text-sm"></i>
+                                </div>
+                                <span class="font-medium">0822 9961 7744</span>
+                            </div>
+
+                            <div class="flex items-center space-x-3 sm:space-x-4">
+                                <div
+                                    class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-200 bg-opacity-20 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-envelope text-amber-200 text-xs sm:text-sm"></i>
+                                </div>
+                                <span class="font-medium text-xs sm:text-sm">nengjuliawati06@gmail.com</span>
+                            </div>
+
+                            <div class="flex items-start space-x-3 sm:space-x-4">
+                                <div
+                                    class="w-8 h-8 sm:w-10 sm:h-10 bg-amber-200 bg-opacity-20 rounded-full flex items-center justify-center mt-1">
+                                    <i class="fas fa-map-marker-alt text-amber-200 text-xs sm:text-sm"></i>
+                                </div>
+                                <div class="text-xs sm:text-sm leading-relaxed font-medium">
+                                    <p>Jl. RAA. Wiratanudiningrat No.9b,</p>
+                                    <p>RW.01, Empangsari, Kec. Tawang,</p>
+                                    <p>Kab. Tasikmalaya, Jawa Barat 46112</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6 sm:space-y-8 order-1 lg:order-2">
+                    <div>
+                        <h2
+                            class="playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-6 sm:mb-8 leading-tight">
+                            Kami menyajikan hidangan lezat untuk keluarga Anda.
+                        </h2>
+
+                        <p
+                            class="text-gray-600 text-base sm:text-lg lg:text-xl leading-relaxed mb-8 sm:mb-10 font-light">
+                            Kami hadir untuk memberikan pengalaman makan yang menyenangkan dengan berbagai pilihan sate,
+                            soto, gulai, dan hidangan <span class="text-red-600 font-semibold">spesial lainnya</span>.
+                            Mengutamakan bahan-bahan berkualitas dan cita rasa otentik, kami siap menyambut Anda untuk
+                            menikmati santapan yang memuaskan.
+                        </p>
+
+                        <a href="tentang.html">
+                            <button
+                                class="bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white px-8 sm:px-10 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold transition-all duration-300 hover:-translate-y-1 hover:shadow-xl border-2 border-amber-600 w-full sm:w-auto touch-target">
+                                Selengkapnya Tentang Kami
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 sm:py-20 bg-white">
+        <div class="container mx-auto mobile-padding">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2
+                    class="playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 sm:mb-6 leading-tight">
+                    <span class="block sm:inline">Kami juga menawarkan</span><br class="hidden sm:block">
+                    <span class="block sm:inline">layanan untuk acara Anda.</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                        <img src="/images/catering.jpg"
+                            class="w-full h-48 sm:h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-700 responsive-img">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-500">
+                        </div>
+                    </div>
+                    <div class="space-y-3 sm:space-y-4">
+                        <h3
+                            class="playfair text-xl sm:text-2xl font-bold text-gray-800 group-hover:text-red-600 transition-colors duration-300">
+                            Catering
+                        </h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Kami menyediakan layanan catering dengan hidangan lezat yang cocok untuk berbagai acara.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                        <img src="/images/1000143211.jpg"
+                            alt="Ulang Tahun"
+                            class="w-full h-48 sm:h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-700 responsive-img">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-500">
+                        </div>
+                    </div>
+                    <div class="space-y-3 sm:space-y-4">
+                        <h3
+                            class="playfair text-xl sm:text-2xl font-bold text-gray-800 group-hover:text-red-600 transition-colors duration-300">
+                            Ulang Tahun
+                        </h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Rayakan momen istimewa dengan hidangan lezat dan suasana yang menyenangkan.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                        <img src="/images/wedding.jpg"
+                            alt="Weddings"
+                            class="w-full h-48 sm:h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-700 responsive-img">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-500">
+                        </div>
+                    </div>
+                    <div class="space-y-3 sm:space-y-4">
+                        <h3
+                            class="playfair text-xl sm:text-2xl font-bold text-gray-800 group-hover:text-red-600 transition-colors duration-300">
+                            Weddings
+                        </h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Menyiapkan hidangan istimewa untuk hari bahagia Anda dengan cita rasa yang tak terlupakan.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="group cursor-pointer">
+                    <div
+                        class="relative overflow-hidden rounded-2xl sm:rounded-3xl mb-4 sm:mb-6 shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                        <img src="/images/1000143333.jpg"
+                            alt="Acara"
+                            class="w-full h-48 sm:h-64 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-700 responsive-img">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-30 transition-all duration-500">
+                        </div>
+                    </div>
+                    <div class="space-y-3 sm:space-y-4">
+                        <h3
+                            class="playfair text-xl sm:text-2xl font-bold text-gray-800 group-hover:text-red-600 transition-colors duration-300">
+                            Acara
+                        </h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Memberikan layanan makanan istimewa untuk acara besar atau kecil Anda.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 sm:py-20 bg-white">
+        <div class="container mx-auto mobile-padding">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-6 order-2 lg:order-1">
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                        <div class="flex-1">
+                            <img src="/images/1000012958.png"
+                                alt="Sate Madura"
+                                class="w-full h-64 sm:h-80 lg:h-[520px] object-cover rounded-2xl sm:rounded-3xl shadow-xl hover:scale-105 transition-transform duration-500 responsive-img">
+                        </div>
+
+                        <div class="hidden sm:flex flex-col gap-4 sm:gap-6 w-full sm:w-48 lg:w-64">
+                            <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl">
+                                <img src="/images/sate-3.jpg"
+                                    alt="Noodle Soup Bowl"
+                                    class="w-full h-32 sm:h-48 lg:h-60 object-cover hover:scale-110 transition-transform duration-500 responsive-img">
+                            </div>
+                            <div class="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-xl">
+                                <img src="/images/sate2.jpg"
+                                    alt="Grilled Sate"
+                                    class="w-full h-32 sm:h-48 lg:h-60 object-cover hover:scale-110 transition-transform duration-500 responsive-img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 space-y-6 sm:space-y-8 order-1 lg:order-2">
+                    <div>
+                        <h2
+                            class="playfair text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6 leading-tight">
+                            Pengantaran Makanan Cepat dan Terpercaya
+                        </h2>
+
+                        <p class="text-gray-600 text-base sm:text-lg leading-relaxed mb-8 sm:mb-10">
+                            Layanan pengantaran makanan kami menawarkan hidangan lezat dengan kecepatan dan kualitas
+                            terbaik.
+                        </p>
+
+                        <div class="space-y-4 sm:space-y-6">
+                            <div class="flex items-center space-x-3 sm:space-x-4">
+                                <div
+                                    class="w-10 h-10 sm:w-12 sm:h-12 bg-red-800 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-clock text-white text-sm sm:text-base"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-800">
+                                        Pengantaran dalam 30 Menit
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3 sm:space-x-4">
+                                <div
+                                    class="w-10 h-10 sm:w-12 sm:h-12 bg-red-800 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-tags text-white text-sm sm:text-base"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-800">
+                                        Penawaran Terbaik & Harga Terjangkau
+                                    </h3>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center space-x-3 sm:space-x-4">
+                                <div
+                                    class="w-10 h-10 sm:w-12 sm:h-12 bg-red-800 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <i class="fas fa-laptop text-white text-sm sm:text-base"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-base sm:text-lg font-semibold text-gray-800">
+                                        Layanan Pemesanan Online
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 sm:py-20 bg-gray-50">
+        <div class="container mx-auto mobile-padding">
+            <div class="text-center mb-12 sm:mb-16">
+                <h2
+                    class="playfair text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 sm:mb-6 leading-tight">
+                    Apa Kata Pelanggan Kami
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+                <div
+                    class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="mb-4 sm:mb-6">
+                        <h3 class="playfair text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">
+                            "Tempat makan terbaik"
+                        </h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Semalam, kami makan di sini dan benar-benar terkesan. Sejak kami melangkah masuk, kami
+                            disambut dengan suasana yang ramah dan senyuman hangat dari pelayan.
+                        </p>
+                    </div>
+
+                    <div class="flex items-center space-x-3 sm:space-x-4 pt-4 sm:pt-6 border-t border-gray-100">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+                                alt="Puteri" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">Puteri</h4>
+                            <p class="text-xs sm:text-sm text-gray-500">Yogyakarta</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+                    <div class="mb-4 sm:mb-6">
+                        <h3 class="playfair text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">
+                            "Sangat Lezat"
+                        </h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Tempat ini melebihi ekspektasi saya. Suasana nyaman dan santai, cocok untuk makan malam.
+                            Setiap hidangan disiapkan dengan higienis.
+                        </p>
+                    </div>
+
+                    <div class="flex items-center space-x-3 sm:space-x-4 pt-4 sm:pt-6 border-t border-gray-100">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                                alt="Ikal Teguh" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">Ikal Teguh</h4>
+                            <p class="text-xs sm:text-sm text-gray-500">Tasikmalaya</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                    class="bg-white rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 md:col-span-2 lg:col-span-1">
+                    <div class="mb-4 sm:mb-6">
+                        <h3 class="playfair text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">
+                            "Resto yang Wajib Dikunjungi"
+                        </h3>
+                        <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                            Suasana sangat nyaman dan cocok untuk segala suasana. Makanan yang disajikan memukau, sangat
+                            direkomendasikan untuk yang suka kuliner.
+                        </p>
+                    </div>
+
+                    <div class="flex items-center space-x-3 sm:space-x-4 pt-4 sm:pt-6 border-t border-gray-100">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
+                                alt="Amanda" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-gray-800 text-sm sm:text-base">Amanda</h4>
+                            <p class="text-xs sm:text-sm text-gray-500">Tasikmalaya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gradient-to-br from-red-900 to-red-800 text-white py-12 sm:py-16">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
+                <div class="lg:col-span-2 space-y-4 sm:space-y-6">
+                    <div class="flex items-center space-x-3 sm:space-x-4 mb-4 sm:mb-6">
+                        <div
+                            class="w-12 h-12 sm:w-16 sm:h-16 rounded-full overflow-hidden flex items-center justify-center">
+                            <img src="/images/logo.png" alt="Logo Sate dan Soto Madura Mas Acong"
+                                class="w-full h-full object-cover rounded-full">
+                        </div>
+                        <div>
+                            <h3 class="playfair text-lg sm:text-2xl font-bold italic text-white leading-tight">
+                                <span class="block sm:inline">Sate dan Soto Madura</span><br class="sm:hidden">
+                                <span class="block sm:inline">Mas Acong</span>
+                            </h3>
+                        </div>
+                    </div>
+
+                    <p class="text-white text-sm sm:text-base leading-relaxed max-w-md">
+                        Kami menghadirkan cita rasa sate, soto, gulai, dan hidangan lezat lainnya dengan kualitas
+                        terbaik, siap menemani setiap momen Anda.
+                    </p>
+
+                    <div class="space-y-2">
+                        <p class="text-white font-semibold text-sm sm:text-base">Jam Buka: 10.00 - 22.00</p>
+                    </div>
+
+                    <div class="flex space-x-3 sm:space-x-4">
+                        <a href="#" aria-label="Twitter"
+                            class="w-10 h-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-twitter text-white text-sm"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/16oEzD4RGF/?mibextid=wwXIfr" aria-label="Facebook"
+                            class="w-10 h-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-facebook text-white text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/warungsatemadura._" aria-label="Instagram"
+                            class="w-10 h-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 touch-target">
+                            <i class="fab fa-instagram text-white text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="space-y-4 sm:space-y-6">
+                    <h4 class="text-lg sm:text-xl font-bold text-white">Halaman</h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li><a href="index.html"
+                                class="text-white hover:text-yellow-200 transition-colors duration-300 text-sm sm:text-base touch-target block">Beranda</a>
+                        </li>
+                        <li><a href="tentang.html"
+                                class="text-white hover:text-yellow-200 transition-colors duration-300 text-sm sm:text-base touch-target block">Tentang</a>
+                        </li>
+                        <li><a href="menu.html"
+                                class="text-white hover:text-yellow-200 transition-colors duration-300 text-sm sm:text-base touch-target block">Menu</a>
+                        </li>
+                        <li><a href="kontak.html"
+                                class="text-white hover:text-yellow-200 transition-colors duration-300 text-sm sm:text-base touch-target block">Kontak</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4 sm:space-y-6 md:col-span-2 lg:col-span-1">
+                    <h4 class="text-lg sm:text-xl font-bold text-white">Ikuti Kami di Instagram</h4>
+                    <div class="grid grid-cols-2 gap-2 sm:gap-3">
+                        <div
+                            class="aspect-square rounded-lg sm:rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                            <img src="/images/sate-3.jpg"
+                                alt="Instagram Post 1" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square rounded-lg sm:rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                            <img src="/images/sate2.jpg"
+                                alt="Instagram Post 2" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square rounded-lg sm:rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                            <img src="/images/1000012958.png"
+                                alt="Instagram Post 3" class="w-full h-full object-cover">
+                        </div>
+                        <div
+                            class="aspect-square rounded-lg sm:rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                            <img src="/images/sate-maranggi.jpg"
+                                alt="Instagram Post 4" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-red-700 pt-6 sm:pt-8">
+                <div class="text-center">
+                    <p class="text-white text-xs sm:text-sm">
+                        Copyright © 2025 Jupiter. All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+        <button
+            class="bg-green-500 hover:bg-green-600 text-white w-12 h-12 sm:w-14 sm:h-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover-scale touch-target">
+            <i class="fab fa-whatsapp text-lg sm:text-xl"></i>
+        </button>
+    </div>
+
+<script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuClose = document.getElementById('mobile-menu-close');
+
+        function openMobileMenu() {
+            mobileMenu.classList.remove('hidden');
+            mobileMenuOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            mobileMenu.classList.remove('active');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuOverlay.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', openMobileMenu);
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+        mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+
+        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', function () {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.classList.add('backdrop-blur-md', 'bg-white/95');
+            } else {
+                header.classList.remove('backdrop-blur-md', 'bg-white/95');
+            }
+        });
+
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+
+        window.addEventListener('resize', function () {
+            if (window.innerWidth >= 768) {
+                closeMobileMenu();
+            }
+        });
+
+        if ('ontouchstart' in window) {
+            document.body.classList.add('touch-device');
+        }
+
+        const lazyImages = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+
+        lazyImages.forEach(img => imageObserver.observe(img));
+
+        const buttons = document.querySelectorAll('button, .touch-target');
+        buttons.forEach(button => {
+            button.addEventListener('touchstart', function () {
+                this.style.transform = 'scale(0.95)';
+            }, { passive: true });
+
+            button.addEventListener('touchend', function () {
+                this.style.transform = '';
+            }, { passive: true });
+        });
+
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        let lastTouchEnd = 0;
+
+        window.addEventListener('load', function () {
+            document.body.classList.add('loaded');
+        });
+
+        const isLowEndDevice = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2;
+        if (isLowEndDevice) {
+            document.documentElement.style.setProperty('--animation-duration', '0.2s');
+        }
+    </script>
+</body>
+
+</html>
