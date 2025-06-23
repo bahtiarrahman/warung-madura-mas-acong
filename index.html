@@ -944,6 +944,8 @@
         window.addEventListener('resize', function () {
             if (window.innerWidth >= 768) {
                 closeMobileMenu();
+                const navbarMain = document.querySelector('.navbar-main');
+                navbarMain.classList.remove('navbar-scrolled');
             }
         });
 
